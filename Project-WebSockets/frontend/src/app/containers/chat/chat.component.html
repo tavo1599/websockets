@@ -1,0 +1,86 @@
+<div class="login">
+  <app-usernname (userNameEvent)="userNameUpdate($event)" *ngIf="!userName"></app-usernname>
+</div>
+<div class="container">
+  <div class="header-one">
+      <div class="ico-one">
+          <i class='bx bx-dots-vertical-rounded'></i>
+      </div>
+      <h2>WebSocket</h2>
+      <div class="ico-two">
+          <i class='bx bx-notification'></i>
+      </div>
+  </div>
+  <div class="header-two">
+      <div class="two-user">
+          <div class="circle-user"></div>
+          <div class="user-information">
+              <h2>Machirulo</h2>
+              <h3>Last Seen Today at 10:30 AM</h3>
+          </div>
+      </div>
+      <div class="two-icons">
+          <i class="fa-regular fa-plus"></i>
+          <i class='bx bx-search'></i>
+          <i class="fas fa-regular fa-bars"></i>
+      </div>
+  </div>
+  <div class="contacts">
+      <div class="contact-options">
+          <div class="search">
+              <div class="input">
+                  <input type="text" placeholder="Buscar usuario">
+                  <i class='bx bx-search'></i>
+  
+              </div>
+              <div class="ico-filter">
+                  <i class='bx bx-filter'></i>  
+              </div>
+          </div>
+          <div class="options-user">
+              <ul>
+                  <li><a href="#">Recents</a></li>
+                  <li><a href="#">Favorites</a></li>
+                  <li><a href="#">Contacts</a></li>
+              </ul>
+          </div>
+          
+      </div>
+      <div class="contact-chats">
+          
+              <div class="chatbox__user--active" *ngFor="let user of userList" >
+                  <p>{{ user }}</p>
+                </div>
+          
+      
+      
+
+  </div>
+   </div>
+
+       <div class="chats">
+          <div class="messages_list">
+              <div class="chatbox__messages" *ngFor="let msg of messageList" [ngClass]="{mine: msg.mine}">
+                <div class="user-message">
+                  <div class="message-box">
+                    <p class="name">{{ msg.userName }}</p>
+                    <br/>
+                    <p class="message">{{ msg.message }}</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+
+            <div class="enviar">
+              <div class="enviar-texto"><input type="text" [(ngModel)]="message"></div>
+
+              <div class="boton-enviar"><button (click)="sendMessage()">Enviar</button></div>
+             </div>
+             </div>
+</div>
+
+
+
+ 
+

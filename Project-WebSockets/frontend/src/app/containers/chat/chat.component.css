@@ -1,0 +1,290 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+body{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg , #d0ffae,#34ebe9)
+}
+.container{
+    width: 70%;
+    height: calc(100vh - 200px);
+    margin: 0 20%;
+    border: 1px solid rgba(195,195,205,0.5);
+    border-radius: 5px;
+    box-shadow: 0 0px 40px rgba(0,0,0,0.2);
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 320px 1fr;
+    grid-template-areas:
+        "heade header"
+        "nav section";
+    background: #FFF;
+    text-align: center;
+}
+/* ---------------- */
+.header-one{
+    grid-area: heade;
+    border-bottom: 1px solid rgba(195,195,205,0.5);
+    border-right: 1px solid rgba(195,195,205,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+.header-one .ico-one{
+    width: 35px;
+    height: 35px;
+    background: #F5F9F8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.header-one .ico-one i{
+    color: #CED2D1;
+    font-size: 22px;
+    cursor: pointer;
+}
+.header-one h2{
+    color: #CED2D1;
+    font-size: 20px;
+    font-weight: 300;
+}
+.header-one .ico-two{
+    width: 35px;
+    height: 35px;
+    background: #F5F9F8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.header-one .ico-two i{
+    color: #CED2D1;
+    font-size: 22px;
+}
+/* ---------------------- */
+.header-two{
+    grid-area: header;
+    border-bottom: 1px solid rgba(195,195,205,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+} 
+.header-two .two-user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.header-two .two-user .circle-user{
+    width: 40px;
+    height: 40px;
+    background: #CED2D1;
+    border-radius: 50%;
+}
+.header-two .two-user .user-information h2{
+    font-size: 18px;
+    font-weight: 400;
+    color: #393939;
+}
+.header-two .two-user .user-information h3{
+    font-size: 13px;
+    font-weight: 300;
+    color: #ACADB1;
+}
+.header-two .two-icons{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.header-two .two-icons i{
+    padding: 5px;
+    color: #BCBFC4;
+    font-size: 20px;
+    cursor: pointer;
+}
+.header-two .two-icons i:nth-child(2){
+    font-size: 22px;
+}
+/* --------------------------- */
+.contacts{
+    grid-area: nav;
+    border-right: 1px solid rgba(195,195,205,0.5);
+    display: grid;
+    grid-template-rows: 80px  1fr ;
+    overflow: hidden;
+}
+.contacts .contact-options{
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+}
+.contacts .contact-options .search{
+    height: 50px;
+    display: flex;
+    align-items:center;
+    gap: 10px;
+}
+.contacts .contact-options .search .input{
+    height: 30px;
+    width: 100%;
+    position: relative;
+}
+.contacts .contact-options .search .input input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid #CED2D1;
+    padding:0 30px;
+    color: #ACADB1;
+}
+.contacts .contact-options .search .input ::placeholder{
+    color: #BCBFC4;
+}
+.contacts .contact-options .search .input i{
+    position: absolute;
+    z-index: 1;
+    top: 19%;
+    left: 8px;
+    color: #ACADB1;
+    font-size: 20px;
+}
+.contacts .contact-options .search .ico-filter{
+    width: 35px;
+    height: 30px;
+    background: #F5F9F8;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.contacts .contact-options .search .ico-filter i{
+    color: #ACADB1;
+    font-size: 22px;
+}
+.contacts .contact-options .options-user{
+    width: 100%;
+    height: 30px;
+}
+.contacts .contact-options .options-user ul{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.contacts .contact-options .options-user ul li {
+    flex-basis: 33.33%;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: background 0.4;
+}
+.contacts .contact-options .options-user ul li:hover::after{
+    content: '';    
+    width: 100%;
+    height: 3px;
+    background: #D7E0DD;
+    position: absolute;
+    bottom: 0;
+}
+.contacts .contact-options .options-user ul li a{
+    text-decoration: none;
+    color: #ACADB1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contacts .contact-chats{
+    height: 100%;
+    overflow-y: scroll; 
+    padding: 0 15px;
+}
+.chats{
+    padding: 50px;
+    text-align: right;
+    grid-area: section;
+    position: relative;
+    
+}
+.form-group{
+    padding: 15px;
+    position: relative;
+    
+    
+}
+.chats .form-group{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    
+    bottom: 0;
+
+}
+
+input{
+    width: 80%;
+    
+    height: 25px;
+}
+.chatbox__user--active{
+    width: 100%;
+    height: 50px;
+    
+}
+.enviar{
+    width: 100%;
+    height: 45px;
+    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+}
+.enviar-texto{
+    width: 85%;
+    height: 100%;
+    
+}
+.boton-enviar{
+    width: 15%;
+    height: 100%;
+    
+}
+.enviar-texto input{
+    width: 100%;
+    height: 100%;
+    font-size: larger;
+}
+.boton-enviar button{
+    width: 100%;
+    height: 100%;
+    background: cadetblue;
+}
+.login{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 2%;
+}
+
+
+
